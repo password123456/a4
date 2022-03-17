@@ -9,7 +9,6 @@
 
 - Microsoft Azure cloud ip prefixes
 - script collects ipv4-address. if you want to get all of the ip-addresses, need to some code modifications
-- you can find cloud region lists and it's location in here [regions-zones](https://cloud.google.com/compute/docs/regions-zones)
 
 # Documentation
 
