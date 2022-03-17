@@ -130,7 +130,6 @@ def collect_azure_cloud_ips():
         print('%s[+] Collect %s Cloud IP Prefixes.%s' % (Bcolors.OKGREEN, _name_, Bcolors.ENDC))
 
         for ip_group in azure_ip_dictionary['values']:
-            n = n + 1
             if ip_group['name'].startswith('AzureCloud.'):
                 service = ip_group['name']
                 region = ip_group['properties']['region']
@@ -145,6 +144,7 @@ def collect_azure_cloud_ips():
                     ip_valid = valid_ipv4(check_ipv4)
                     if ip_valid:
                         try:
+                            n = n + 1
                             writer.writerow([_ctime_, platform, _ctime_, region, ip_prefix, service])
                             sys.stdout.write('\r ----> Processing... %d lines' % n)
                             sys.stdout.flush()
